@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7bff7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7bff7.dir/build.make CMakeFiles/cmTC_7bff7.dir/build
+make[1]: Entering directory '/data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7bff7.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_7bff7.dir/CheckSymbolExists.c.o   -c /data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7bff7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bff7.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_7bff7.dir/CheckSymbolExists.c.o  -o cmTC_7bff7 
+CMakeFiles/cmTC_7bff7.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7bff7.dir/build.make:86: recipe for target 'cmTC_7bff7' failed
+make[1]: *** [cmTC_7bff7] Error 1
+make[1]: Leaving directory '/data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_7bff7/fast' failed
+make: *** [cmTC_7bff7/fast] Error 2
+
+File /data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2f8ed/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2f8ed.dir/build.make CMakeFiles/cmTC_2f8ed.dir/build
+make[1]: Entering directory '/data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2f8ed.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2f8ed.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2f8ed
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f8ed.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2f8ed.dir/CheckFunctionExists.c.o  -o cmTC_2f8ed -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2f8ed.dir/build.make:86: recipe for target 'cmTC_2f8ed' failed
+make[1]: *** [cmTC_2f8ed] Error 1
+make[1]: Leaving directory '/data/working/ElasticFusion/ElasticFusion/GPUTest/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_2f8ed/fast' failed
+make: *** [cmTC_2f8ed/fast] Error 2
+
+
